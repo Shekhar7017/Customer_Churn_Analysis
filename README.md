@@ -146,38 +146,6 @@ Dataset split:
 
 ---
 
-# 7️⃣ Detecting Imbalanced Dataset
-
-```python
-df['Churn'].value_counts()
-```
-
-Example result:
-
-```
-No  → 5174
-Yes → 1869
-```
-
-The dataset is **imbalanced** because one class appears much more than the other.
-
----
-
-# 8️⃣ Handling Imbalanced Data (SMOTE)
-
-To solve the imbalance problem, **SMOTE (Synthetic Minority Oversampling Technique)** was applied.
-
-```python
-from imblearn.over_sampling import SMOTE
-
-smote = SMOTE(random_state=42)
-
-X_train_balanced, y_train_balanced = smote.fit_resample(X_train, y_train)
-```
-
-SMOTE creates synthetic samples for the minority class to balance the dataset.
-
----
 
 # 9️⃣ Model Training (Logistic Regression)
 
